@@ -2,27 +2,32 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
+
 #main-doc {
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-row: 1fr;
+  grid-template-rows: 1fr;
 }
+
 .box {
   grid-column-start: 1;
   display: block;
   position: fixed;
   height: 100vh;
   width: 300px;
-  overflow: 0;
+  overflow: none;
   border-right: 4px solid black;
 }
+
 #navbar {
   display: flex;
   flex-direction: column;
 }
+
 a {
   color: black;
   font-size: 1.4rem;
@@ -30,30 +35,47 @@ a {
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
+
 a:hover {
   color: rgb(1, 1, 150);
   font-weight: bold;
 }
+
 .container {
   grid-column-start: 2;
 }
+
 .main-section {
   padding: 1.3rem 1rem;
 }
+
 .h1 {
   padding: 1rem 0 0 1rem;
   font-size: 1.6rem;
   font-weight: 700;
 }
-header {
+
+header h1,
+h2 {
   padding: 1rem 0;
   font-size: 2rem;
 }
+
 .code {
   margin: 1rem 0;
   background: #eee;
   padding: 1rem;
   border-radius: 0.5rem;
+}
+
+.more {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.more:hover {
+  color: rgb(1, 1, 150);
+  font-weight: bold;
 }
 
 @media screen and (max-width: 500px) {
@@ -67,7 +89,7 @@ header {
     grid-row-start: 1;
     position: relative;
     height: auto;
-    overflow: 1;
+    overflow: auto;
     border: none;
   }
 

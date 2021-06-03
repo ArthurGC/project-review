@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>JS Challenges</title>
+  </head>
+
+  <body>
+    <main id="main-doc">
+      <div class="box">
+        <nav id="navbar">
+          <header class="h1">JS Challenges</header>
+          <a href="#Apple_and_Orange" class="nav-link">Apple and Orange</a>
+          <a href="#Breaking_best_and_worst_records" class="nav-link"
+            >Breaking best and worst records</a
+          >
+          <a href="#Cats_and_a_mouse" class="nav-link">Cats and a mouse</a>
+          <a href="#The_hurdle_race" class="nav-link">The hurdle race</a>
+          <a href="#Simple_Array_Sum" class="nav-link">Simple Array Sum</a>
+        </nav>
+      </div>
+
+      <div class="container">
+        <section class="main-section" id="Apple_and_Orange">
+          <header><h2>Apple and Orange</h2></header>
+          <p>
+            Sam's house has an apple tree and an orange tree that yield an
+            abundance of fruit. Using the information given below, determine the
+            number of apples and oranges that land on Sam's house.
+          </p>
+          <div class="code">
+            <p>
+              <code>
+                function countApplesAndOranges(s, t, a, b, apples, oranges) {
+                let positionApples = []; let positionOranges = [];
+                apples.forEach( x => {if((x+a) >= s && (x+a) &lt;= t) return
+                positionApples.push(x+a)}); oranges.forEach( x => {if((x+b) >= s
+                && (x+b) &lt;= t) return positionOranges.push(x+b)});
+                console.log(positionApples.length);
+                console.log(positionOranges.length); }
+              </code>
+            </p>
+          </div>
+          <p class="more">More...</p>
+        </section>
+        <section class="main-section" id="Breaking_best_and_worst_records">
+          <header><h2>Breaking best and worst records</h2></header>
+          <p>
+            Maria plays college basketball and wants to go pro. Each season she
+            maintains a record of her play. She tabulates the number of times
+            she breaks her season record for most points and least points in a
+            game. Points scored in the first game establish her record for the
+            season, and she begins counting from there.
+          </p>
+          <div class="code">
+            <p>
+              <code>
+                function breakingRecords(scores) { let minScore = scores[0]; let
+                maxScore = scores[0]; let countMin = 0; let countMax = 0; for
+                (let i = 1; i &lt; scores.length; i++) { if (scores[i] &lt; minScore)
+                { minScore = scores[i] countMin++; } if (scores[i] > maxScore) {
+                maxScore = scores[i]; countMax++ } } return [countMax, countMin]
+                }
+              </code>
+            </p>
+          </div>
+
+          <p class="more">More...</p>
+        </section>
+        <section class="main-section" id="Cats_and_a_mouse">
+          <header><h2>Cats and a mouse</h2></header>
+          <p>
+            Two cats and a mouse are at various positions on a line. You will be
+            given their starting positions. Your task is to determine which cat
+            will reach the mouse first, assuming the mouse does not move and the
+            cats travel at equal speed. If the cats arrive at the same time, the
+            mouse will be allowed to move and it will escape while they fight.
+          </p>
+          <div class="code">
+            <p>
+              <code>
+                function catAndMouse(x, y, z) { let A = Math.abs(z-x); let B =
+                Math.abs(z-y); if (A == B) { return 'Mouse C' }else if (B &lt; A) {
+                return 'Cat B' }else if (A &lt; B) { return 'Cat A' } }
+              </code>
+            </p>
+          </div>
+          <p class="more">More...</p>
+        </section>
+        <section class="main-section" id="The_hurdle_race">
+          <header><h2>The hurdle race</h2></header>
+          <p>
+            A video player plays a game in which the character competes in a
+            hurdle race. Hurdles are of varying heights, and the characters have
+            a maximum height they can jump. There is a magic potion they can
+            take that will increase their maximum jump height by unit for each
+            dose. How many doses of the potion must the character take to be
+            able to jump all of the hurdles. If the character can already clear
+            all of the hurdles, return .
+          </p>
+          <div class="code">
+            <p>
+              <code>
+                function hurdleRace(k, height) { let maxHeight =
+                Math.max(...height); return (maxHeight > k)? maxHeight-k: 0}
+              </code>
+            </p>
+          </div>
+          <p class="more">More...</p>
+        </section>
+        <section class="main-section" id="Simple_Array_Sum">
+          <header><h2>Simple Array Sum</h2></header>
+          <p>
+            Given an array of integers, find the sum of its elements. For
+            example, if the array ar = [1,2,3], 1 + 2 + 3 = 6
+          </p>
+          <p>
+            Complete the simpleArraySum function in the editor below. It must
+            return the sum of the array elements as an integer.
+            <br />simpleArraySum has the following parameter(s):
+          </p>
+          <br />
+          <p class="more">ar: an array of integers</p>
+          <div class="code">
+            <code>
+              function simpleArraySum(ar) { return ar.reduce((a, b) => a + b)}
+            </code>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
